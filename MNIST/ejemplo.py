@@ -100,10 +100,10 @@ def preprocesar_imagen(ruta):
     img_array = 255 - np.array(img)  # Invertir colores
     return img_array.astype(np.float32).reshape(1, -1) / 255.0
 
-X_train = load_images('train-images-idx3-ubyte.gz')
-y_train = load_labels('train-labels-idx1-ubyte.gz')
-X_test = load_images('t10k-images-idx3-ubyte.gz')
-y_test = load_labels('t10k-labels-idx1-ubyte.gz')
+X_train = load_images('MNIST/train-images-idx3-ubyte.gz')
+y_train = load_labels('MNIST/train-labels-idx1-ubyte.gz')
+X_test = load_images('MNIST/t10k-images-idx3-ubyte.gz')
+y_test = load_labels('MNIST/t10k-labels-idx1-ubyte.gz')
 
 # Normalizar datos
 X_train = X_train / 255.0
@@ -118,6 +118,6 @@ precision = np.mean(modelo.predict(X_test) == y_test)
 print(f'Precisión en test: {precision:.4f}')
 
 # Ejemplo de predicción (reemplazar 'digito.png' con tu imagen)
-imagen = preprocesar_imagen('1.png')
+imagen = preprocesar_imagen('MNIST/7_test.png')
 prediccion = modelo.predict(imagen)
 print(f'El dígito es: {prediccion[0]}')
