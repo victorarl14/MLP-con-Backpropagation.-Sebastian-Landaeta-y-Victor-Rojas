@@ -8,7 +8,7 @@ INPUT_SIZE = 28 * 28  # Imágenes de 28x28
 HIDDEN_SIZE = 256
 OUTPUT_SIZE = 62  # Establecer OUTPUT_SIZE a 62 (fijo)
 LEARNING_RATE = 0.01
-EPOCHS = 10
+EPOCHS = 30
 BATCH_SIZE = 64
 
 # Cargar datos desde la carpeta by_class
@@ -138,7 +138,7 @@ def train_and_save_model(dataset_path):
     model = MLP()
     model.train(X_train, y_train, X_test, y_test, EPOCHS, BATCH_SIZE, LEARNING_RATE)
 
-    np.savez('NITST/nist19_model.npz', W1=model.W1, b1=model.b1, W2=model.W2, b2=model.b2, class_mapping=class_mapping)
+    np.savez('NIST/nist19_model.npz', W1=model.W1, b1=model.b1, W2=model.W2, b2=model.b2, class_mapping=class_mapping)
     print("✅ Modelo guardado correctamente.")
 
 # Predecir un carácter
@@ -172,7 +172,7 @@ if __name__ == "__main__":
 
     #print(f"✅ Entrenamiento completado.")
 
-    test_image = "NIST/imagenes_de_prueba/F.png"
+    test_image = "NIST/imagenes_de_prueba/p.png"
     print(f"El carácter reconocido es: {predict_char(test_image)}")
     
     end_time = time.time()  # Finalizar el contador
