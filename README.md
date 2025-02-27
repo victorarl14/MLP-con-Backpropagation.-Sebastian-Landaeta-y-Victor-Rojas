@@ -1,1 +1,3 @@
 # MLP-con-Backpropagation.-Sebastian-Landaeta-y-Victor-Rojas
+
+Este proyecto implementa una red neuronal multicapa (MLP) con el algoritmo de retropropagación (Backpropagation) para la clasificación de caracteres manuscritos del dataset NIST SD19. La red cuenta con una capa de entrada de 784 neuronas, una capa oculta de 256 neuronas con activación ReLU y una capa de salida de 62 neuronas con Softmax. Se emplea la función de pérdida Cross-Entropy Loss y el optimizador SGD con una tasa de aprendizaje de 0.01. El modelo es entrenado con imágenes normalizadas de 28x28 píxeles y puede reconocer caracteres a partir de imágenes de prueba.
